@@ -23,7 +23,6 @@ jobs:
     - name: Add Git credentials
       with:
         cmd:  git remote add origin https://svercillo:Password12345^^@github.com/svercillo/frontend.git
-      
     - name: Deploy
       uses: maxheld83/ghpages@v0.3.0
       env:
