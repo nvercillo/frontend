@@ -1,0 +1,24 @@
+name: Deploy on GitHub Pages
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Yarn install
+      uses: Borales/actions-yarn@v2.3.0
+      with:
+        cmd: install
+    - name: Yarn build
+      uses: Borales/actions-yarn@v2.3.0
+      with:
+        cmd: run serve
+    - name: Deploy
+      uses: maxheld83/ghpages@v0.3.0
+      env:
+        BUILD_DIR: dist/
+        GH_PAT: ${{ secrets.GH_PAT }}
