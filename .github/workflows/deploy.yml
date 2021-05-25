@@ -20,9 +20,6 @@ jobs:
       uses: Borales/actions-yarn@v2.3.0
       with:
         cmd: build:prod
-    - name: Add Git credentials 
-      run:  git remote add origin https://svercillo:Password12345^^@github.com/svercillo/frontend.git
-      shell: bash
     - name: Deploy
       uses: maxheld83/ghpages@v0.3.0
       env:
