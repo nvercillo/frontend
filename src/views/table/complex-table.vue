@@ -658,7 +658,7 @@ export default class extends Vue {
     const { col_names, rows } = resp
 
     for (var i =0; i <rows.length; i++){
-      var d = {}
+      var d : any = {}
 
       for (var j =0; j < rows[i].length; j++){
         // console.log(col_names[j])
